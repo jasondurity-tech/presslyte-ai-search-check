@@ -1,0 +1,294 @@
+:root {
+	--presslyte-aisc-navy: #071426;
+	--presslyte-aisc-panel: #0c1b31;
+	--presslyte-aisc-violet: #8b5cf6;
+	--presslyte-aisc-cyan: #22d3ee;
+	--presslyte-aisc-text: #f8fafc;
+	--presslyte-aisc-muted: #b8c4d6;
+	--presslyte-aisc-border: rgba(148, 163, 184, 0.24);
+}
+
+#wpadminbar #wp-admin-bar-presslyte-ai-search-check > .ab-item {
+	display: flex;
+	align-items: center;
+	gap: 6px;
+}
+
+#wpadminbar #wp-admin-bar-presslyte-ai-search-check > .ab-item::before {
+	flex: 0 0 18px;
+	width: 18px;
+	height: 18px;
+	padding: 0;
+	background: url("../images/icon-128x128.png") center / contain no-repeat;
+	content: "";
+}
+
+.presslyte-aisc-panel {
+	position: fixed;
+	top: 48px;
+	right: 18px;
+	z-index: 999999;
+	display: flex;
+	flex-direction: column;
+	gap: 14px;
+	box-sizing: border-box;
+	width: 420px;
+	max-width: calc(100% - 36px);
+	max-height: calc(100vh - 66px);
+	max-height: calc(100dvh - 66px);
+	padding: 20px;
+	overflow: auto;
+	color: var(--presslyte-aisc-text);
+	background:
+		radial-gradient(circle at top right, rgba(34, 211, 238, 0.12), transparent 38%),
+		linear-gradient(145deg, var(--presslyte-aisc-panel), var(--presslyte-aisc-navy));
+	border: 1px solid var(--presslyte-aisc-border);
+	border-radius: 16px;
+	box-shadow: 0 22px 70px rgba(2, 6, 23, 0.46);
+	font-family: -apple-system, BlinkMacSystemFont, "Segoe UI", sans-serif;
+	line-height: 1.5;
+}
+
+.presslyte-aisc-panel * {
+	box-sizing: border-box;
+}
+
+.presslyte-aisc-panel header,
+.presslyte-aisc-panel footer {
+	display: flex;
+	align-items: center;
+	justify-content: space-between;
+	gap: 12px;
+}
+
+.presslyte-aisc-brand {
+	display: flex;
+	align-items: center;
+	gap: 11px;
+	min-width: 0;
+}
+
+.presslyte-aisc-icon {
+	flex: 0 0 40px;
+	width: 40px;
+	height: 40px;
+	object-fit: contain;
+	border-radius: 11px;
+	filter: drop-shadow(0 6px 14px rgba(2, 6, 23, 0.45));
+}
+
+.presslyte-aisc-panel h2,
+.presslyte-aisc-panel h3,
+.presslyte-aisc-panel p {
+	margin: 0;
+	color: inherit;
+}
+
+.presslyte-aisc-panel h2 {
+	font-size: 21px;
+	letter-spacing: -0.02em;
+}
+
+.presslyte-aisc-panel h3 {
+	font-size: 13px;
+	letter-spacing: 0.08em;
+	text-transform: uppercase;
+	color: var(--presslyte-aisc-muted);
+}
+
+.presslyte-aisc-intro,
+.presslyte-aisc-empty {
+	font-size: 14px;
+	color: var(--presslyte-aisc-muted) !important;
+}
+
+.presslyte-aisc-summary {
+	display: inline-flex;
+	align-items: center;
+	align-self: flex-start;
+	min-height: 28px;
+	padding: 5px 10px;
+	border: 1px solid transparent;
+	border-radius: 999px;
+	font-size: 12px;
+	font-weight: 700;
+	letter-spacing: 0.02em;
+}
+
+.presslyte-aisc-summary::before {
+	width: 7px;
+	height: 7px;
+	margin-right: 7px;
+	background: currentColor;
+	border-radius: 50%;
+	content: "";
+}
+
+.presslyte-aisc-summary--needs {
+	color: #fecdd3;
+	background: rgba(190, 24, 93, 0.22);
+	border-color: rgba(251, 113, 133, 0.52);
+}
+
+.presslyte-aisc-summary--review {
+	color: #ede9fe;
+	background: rgba(109, 40, 217, 0.26);
+	border-color: rgba(167, 139, 250, 0.52);
+}
+
+.presslyte-aisc-summary--pass {
+	color: #99f6e4;
+	background: rgba(15, 118, 110, 0.24);
+	border-color: rgba(45, 212, 191, 0.48);
+}
+
+.presslyte-aisc-close {
+	flex: 0 0 40px;
+	width: 40px;
+	height: 40px;
+	padding: 0;
+	color: var(--presslyte-aisc-text);
+	background: rgba(255, 255, 255, 0.06);
+	border: 1px solid var(--presslyte-aisc-border);
+	border-radius: 9px;
+	font-size: 24px;
+	line-height: 1;
+	cursor: pointer;
+}
+
+.presslyte-aisc-list {
+	display: grid;
+	gap: 10px;
+}
+
+.presslyte-aisc-result {
+	display: grid;
+	gap: 5px;
+	width: 100%;
+	padding: 13px 14px;
+	color: var(--presslyte-aisc-text);
+	text-align: left;
+	background: rgba(255, 255, 255, 0.045);
+	border: 1px solid var(--presslyte-aisc-border);
+	border-left: 3px solid var(--presslyte-aisc-violet);
+	border-radius: 10px;
+	font: inherit;
+}
+
+button.presslyte-aisc-result {
+	cursor: pointer;
+}
+
+.presslyte-aisc-result--needs {
+	border-left-color: #fb7185;
+}
+
+.presslyte-aisc-result strong {
+	font-size: 14px;
+}
+
+.presslyte-aisc-result-status {
+	font-size: 11px !important;
+	font-weight: 750;
+	letter-spacing: 0.08em;
+	text-transform: uppercase;
+	color: #c4b5fd !important;
+}
+
+.presslyte-aisc-result--needs .presslyte-aisc-result-status {
+	color: #fecdd3 !important;
+}
+
+.presslyte-aisc-result span {
+	font-size: 13px;
+	color: var(--presslyte-aisc-muted);
+}
+
+.presslyte-aisc-passed {
+	display: grid;
+	gap: 6px;
+	margin: 0;
+	padding: 0;
+	list-style: none;
+	font-size: 13px;
+	color: var(--presslyte-aisc-muted);
+}
+
+.presslyte-aisc-passed li::before {
+	content: "✓";
+	margin-right: 8px;
+	color: var(--presslyte-aisc-cyan);
+}
+
+.presslyte-aisc-action {
+	display: inline-flex;
+	align-items: center;
+	justify-content: center;
+	gap: 7px;
+	min-height: 44px;
+	padding: 9px 13px;
+	color: var(--presslyte-aisc-text) !important;
+	text-decoration: none !important;
+	background: rgba(255, 255, 255, 0.06);
+	border: 1px solid var(--presslyte-aisc-border);
+	border-radius: 9px;
+	font-size: 13px;
+	font-weight: 650;
+}
+
+.presslyte-aisc-close:focus-visible,
+.presslyte-aisc-result:focus-visible,
+.presslyte-aisc-action:focus-visible {
+	outline: 3px solid var(--presslyte-aisc-cyan);
+	outline-offset: 2px;
+}
+
+.presslyte-aisc-highlight {
+	outline: 4px solid var(--presslyte-aisc-cyan) !important;
+	outline-offset: 5px !important;
+	box-shadow: 0 0 0 8px rgba(7, 20, 38, 0.82) !important;
+	transition: outline-color 160ms ease;
+}
+
+@media (max-width: 600px) {
+	.presslyte-aisc-panel {
+		top: 58px;
+		left: 10px;
+		right: 10px;
+		width: auto;
+		max-width: none;
+		max-height: calc(100vh - 68px);
+		max-height: calc(100dvh - 68px);
+		padding: 17px;
+	}
+
+	.presslyte-aisc-panel footer {
+		align-items: stretch;
+		flex-direction: column;
+	}
+}
+
+@media screen and (max-width: 782px) {
+	#wpadminbar #wp-admin-bar-presslyte-ai-search-check {
+		display: block !important;
+	}
+
+	#wpadminbar #wp-admin-bar-presslyte-ai-search-check > .ab-item {
+		justify-content: center;
+		width: 46px;
+		padding: 0 !important;
+		font-size: 0;
+	}
+
+	#wpadminbar #wp-admin-bar-presslyte-ai-search-check > .ab-item::before {
+		flex-basis: 22px;
+		width: 22px;
+		height: 22px;
+	}
+}
+
+@media (prefers-reduced-motion: reduce) {
+	.presslyte-aisc-highlight {
+		transition: none;
+	}
+}
